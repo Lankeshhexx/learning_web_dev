@@ -1,0 +1,60 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #ff6a00, #ee0979);
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  perspective: 1000px; /* 3D effect for rotating text */
+}
+
+.king-text {
+  font-size: 5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 5px;
+  animation: rotateAndGlow 4s infinite, colorChange 2s infinite alternate;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 0, 150, 0.8), 0 0 40px rgba(255, 0, 150, 1);
+}
+
+/* Rotate text in 3D */
+@keyframes rotateAndGlow {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Glowing effect */
+@keyframes colorChange {
+  0% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 0, 150, 0.8), 0 0 40px rgba(255, 0, 150, 1);
+    color: #ff6a00;
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 0, 150, 1), 0 0 60px rgba(255, 0, 150, 1);
+    color: #ffcb00;
+  }
+  100% {
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 0, 150, 1), 0 0 70px rgba(255, 0, 150, 1);
+    color: #ee0979;
+  }
+}
